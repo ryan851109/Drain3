@@ -100,7 +100,7 @@ IP is 12.12.12.12
 
 Note: template parameters that do not match custom masking are output as <*>
 
-## Persistence
+## Persistence:
 The persistence feature saves and loads a snapshot of Drain3 state in (compressed) json format. This feature adds restart resiliency
 to Drain allowing continuation of activity and knowledge across restarts.
 
@@ -125,18 +125,13 @@ Snapshots are created in the following events:
 - `cluster_template_changed` - in any update of a template
 - `periodic` - after n minutes from the last snapshot. This is intended to save cluster sizes even if no new template was identified.  
 
-Drain3 currently supports 3 persistence modes:
+Drain3 supports two persistence methods:
 
 - **Kafka** - The snapshot is saved in a dedicated topic used only for snapshots - the last message in this topic 
 is the last snapshot that will be loaded after restart.
 For Kafka persistence, you need to provide: `topic_name` and `server_name`. 
 
 - **File** - The snapshot is saved to a file.
-
-- **None** - No persistence.
-
-Drain3 persistence modes can be easily extended to another medium / database by 
-inheriting the [PersistenceHandler](drain3/persistence_handler.py) class.
 
 
 ## Installation
@@ -148,7 +143,7 @@ Drain3 is available from [PyPI](https://pypi.org/project/drain3). To install use
 
 ## Examples
 
-Run [examples/drain_stdin_demo.py](examples/drain_stdin_demo.py) from the root folder of the repository by: 
+Run from the root folder of the repository: 
 
 ```
 python -m examples.drain_stdin_demo

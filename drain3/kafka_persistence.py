@@ -1,11 +1,12 @@
 """
-Author      : Moshik Hershcovitch
-Author      : David Ohana, Moshik Hershcovitch, Eran Raichstein
-Author_email: david.ohana@ibm.com, moshikh@il.ibm.com, eranra@il.ibm.com
+Description : This file implements the persist/restore from Kafka
+Author      : Moshik Hershcovitch 
+Author_email: moshikh@il.ibm.com
 License     : MIT
 """
 import configparser
 
+import jsonpickle
 import kafka
 
 # logger = logging.getLogger(__name__)
