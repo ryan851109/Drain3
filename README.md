@@ -1,18 +1,19 @@
 # Drain3
 ##  My modification
 I used Drain3 to preprocess the HDFS dataset. Drain3 will classify the logs according to their length, first
-letter and simalarity. What I have done is to transform the result into clusters due to their block ID, which
+letter and similarity. What I have done is to transform the result into clusters due to their block ID, which
 can be used in Deeplog.
-More detail about Deeplog can be find at https://www.cs.utah.edu/~lifeifei/papers/deeplog.pdf
+More detail about Deeplog can be found at https://www.cs.utah.edu/~lifeifei/papers/deeplog.pdf
 
 ## How to use
-result.log contains only 1000 logs to accerelate the procedure here. You can replace it by other data. After
+result.log contains only 1000 logs to accelerate the procedure here. You can replace it by other data. After
 you enter the logs for drain and quit it, the process will be recorded in record.txt Then you can run getID.py,
 It will compare record.txt and result.log and then group the logs with the same blk ID.
 
-Notice: result.log is obtained from the HDFS rawdata of https://github.com/wuyifan18/DeepLog. It is orderd by time,
+Notice: result.log is obtained from the HDFS rawdata of https://github.com/wuyifan18/DeepLog. It is ordered by time,
 not block ID. As a result, what we get here is not the true clusters. However, we can still use the script of our
 own log, which can be ordered according to the block ID.
+
 
 ## Introduction
 
